@@ -7,16 +7,17 @@ const db = knex({
     client: 'pg',
     connection: {
     host : '127.0.0.1',
-    port : 5432,
     user : 'postgres',
     password : 'postgres',
     database : 'small-brain'
-}})
+}});
 
 
 const app = express();
-app.use(express.json());
+
 app.use(cors())
+app.use(express.json());
+
 
 
 app.get('/', (req, res) => {
@@ -44,18 +45,18 @@ app.post('/signin', (req, res) => {
 })
 
 app.post('/register', (req, res) => {
-    const { email, password, name } = req.body;
+    const { email, name, password } = req.body;
     const hash = bcrypt.hashSync(password);
 
     db.transaction(trx => {
-        trx.insert( {
+        trx.insert({
             email: email,
             hash: hash
         })
         .into('login')
         .returning('email')
         .then(loginEmail => {
-            return  db('users')
+            return  trx('users')
                     .returning('*')
                     .insert({
                         name: name,
@@ -63,15 +64,13 @@ app.post('/register', (req, res) => {
                         joined: new Date()
                     })
                     .then(user => {
-                        res.json(user)
+                        res.json(user[0])
                     })
-                    .catch(err => res.status(400).json('unable to register'))
+                    
                     })
                     .then(trx.commit)
                     .catch(trx.rollback)
-                 })
-        
-
+                 }).catch(err => res.status(400).json('unable to register'))
     })
    
 
