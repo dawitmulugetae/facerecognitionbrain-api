@@ -27,6 +27,7 @@ let raw = JSON.stringify({
     method: 'POST',
     headers: {
         'Accept': 'application/json',
+        'Access-Control-Allow-Origin': '*',
         'Authorization': 'Key ' + PAT
     },
     body: raw
