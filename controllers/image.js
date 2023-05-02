@@ -27,7 +27,7 @@ let raw = JSON.stringify({
     method: 'POST',
     headers: {
         'Accept': 'application/json',
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'https://smart-brain-90qx.onrender.com',
         'Authorization': 'Key ' + PAT
     },
     body: raw
