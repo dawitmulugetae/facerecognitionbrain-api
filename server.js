@@ -12,7 +12,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
 const db = knex({
     client: 'pg',
     connection: {
-    host : 'postgres://dawit:dTPV9zPWC3fwkdj9nJxGLPxY03WSAvmp@dpg-ch8h6f5gk4q7lmqeliu0-a/smart_brain_wqsf',
+    host : 'dpg-ch8h6f5gk4q7lmqeliu0-a',
     user : 'dawit',
     password : 'dTPV9zPWC3fwkdj9nJxGLPxY03WSAvmp',
     database : 'smart_brain_wqsf'
