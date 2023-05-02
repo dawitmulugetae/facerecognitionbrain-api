@@ -33,7 +33,7 @@ let raw = JSON.stringify({
   };
   
   await fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
-  .then(response => response.json())
+  .then(response => response.text())
   .then(response => res.json(response))
 
 }
