@@ -4,7 +4,7 @@ const APP_ID = 'main';
 const MODEL_ID = 'face-detection';
 const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105'; 
 
-export const  handleApiCall = (req, res)  => {
+export const  handleApiCall = async(req, res)  => {
 
 
 let raw = JSON.stringify({
@@ -32,7 +32,7 @@ let raw = JSON.stringify({
     body: raw
   };
   
-   fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
+   await fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
   .then(response => response.text())
   .then(response => res.json(response))
     .catch(err => res.status(400).json(err))
