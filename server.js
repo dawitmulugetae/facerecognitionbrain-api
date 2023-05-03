@@ -27,7 +27,7 @@ app.post('/signin', (req, res) => handleSignin(req, res, db, bcrypt))
 app.post('/register', (req, res) => handleRegister(req, res, bcrypt, db))
 app.get('/profile/:id', (req, res) => handleProfileGet(req, res, db))
 app.post('/imageurl', (req, res) => handleApiCall(req, res))
-app.put('/image', handleImage(db))
+app.put('/image', (req, res) => handleImage(req, res, db))
 
 app.listen(3000, () => {
     console.log('app is running on port 3000')
