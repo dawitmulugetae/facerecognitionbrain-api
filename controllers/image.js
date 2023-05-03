@@ -39,7 +39,7 @@ let raw = JSON.stringify({
 
 }
 
-export const handleImage = (db) => (req, res ) => {
+export const handleImage = (req, res, db) => {
     const { id } = req.body;
     db('users')
     .where('id', '=', id)
