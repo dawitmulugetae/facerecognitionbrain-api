@@ -16,6 +16,7 @@ const db = knex({
     connection: {
     host : HOST,
     user : 'dawit',
+    port: 5432,
     password : PASSWD,
     database : DB
 }});
