@@ -7,15 +7,15 @@ import { handleSignin } from './controllers/signin.js';
 import { handleProfileGet } from './controllers/profile.js';
 import { handleImage, handleApiCall } from './controllers/image.js';
 
-const HOST = 'dpg-ch9p3bhjvhtimra3h82g-a.ohio-postgres.render.com';
-const PASSWD = 'M6fyHu8GYxbzbhVeqhppejiEnWuepu6I';
-const DB = 'smart_brain_8cx4';
+const HOST = '20.1.206.97';
+const PASSWD = 'postgres';
+const DB = 'smart-brain';
 
 const db = knex({
     client: 'pg',
     connection: {
     host : HOST,
-    user : 'dawit',
+    user : 'postgres',
     port: 5432,
     password : PASSWD,
     database : DB
