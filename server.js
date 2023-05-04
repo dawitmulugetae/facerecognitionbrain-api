@@ -7,14 +7,17 @@ import { handleSignin } from './controllers/signin.js';
 import { handleProfileGet } from './controllers/profile.js';
 import { handleImage, handleApiCall } from './controllers/image.js';
 
+const HOST = 'dpg-ch9p3bhjvhtimra3h82g-a.ohio-postgres.render.com';
+const PASSWD = 'M6fyHu8GYxbzbhVeqhppejiEnWuepu6I';
+const DB = 'smart_brain_8cx4';
 
 const db = knex({
     client: 'pg',
     connection: {
-    host : 'dpg-ch8h6f5gk4q7lmqeliu0-a.oregon-postgres.render.com',
+    host : HOST,
     user : 'dawit',
-    password : 'dTPV9zPWC3fwkdj9nJxGLPxY03WSAvmp',
-    database : 'smart_brain_wqsf'
+    password : PASSWD,
+    database : DB
 }});
 
 const app = express();
