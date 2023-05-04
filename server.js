@@ -11,7 +11,7 @@ import { handleImage, handleApiCall } from './controllers/image.js';
 const db = knex({
     client: 'pg',
     connection: {
-    host : 'dpg-ch8h6f5gk4q7lmqeliu0-a',
+    host : 'dpg-ch8h6f5gk4q7lmqeliu0-a.oregon-postgres.render.com',
     user : 'dawit',
     password : 'dTPV9zPWC3fwkdj9nJxGLPxY03WSAvmp',
     database : 'smart_brain_wqsf'
